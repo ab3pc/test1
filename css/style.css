@@ -36,3 +36,25 @@ ol {
 	padding: 0;
 	list-style: none;
 }
+
+.table__ico {
+	display: inline-block;
+	margin-right: 7px;
+	text-align: center;
+	width:30px;
+	height: 30px;
+	padding: 7px;
+	font-size: 15px;
+	background-color: rgb(92, 92, 92);
+	color:#fff;
+
+	border-radius: 50%;
+}
+.textarea {
+	resize: none;
+}
+.btn__edit,
+.btn__delete,
+.btn__edit {
+	cursor: pointer;
+}
