@@ -50,11 +50,14 @@ ol {
 
 	border-radius: 50%;
 }
+
 .textarea {
 	resize: none;
 }
 .btn__edit,
 .btn__delete,
-.btn__edit {
+.btn__archive,
+.openArchive,
+.showAll {
 	cursor: pointer;
 }

@@ -30,8 +30,9 @@
 					<th  scope="col">Content</th>
 					<th  scope="col">Dates</th>
 					<th  scope="col">
-						<i class="fas fa-archive"></i>
-						<i class="fas fa-trash-alt"></i>
+						
+						<i class="far fa-clipboard showAll" id="showAll"></i>
+						<i class="fas fa-archive openArchive" id="openArchive"></i>
 					</th>
 				  </tr>
 				</thead>
@@ -68,7 +69,63 @@
 					<button id = "create__note" type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modal">Create note</button>
 				  </div>
 			  </div>
-			
+
+
+
+			  <table class="table text-center align-middle table-hover mt-5">
+				<thead id = "table__head">
+				  <tr class="table-dark rounded-">
+					
+					<th colspan="2"  scope="col">Note Category</th>
+					<th colspan="2"  scope="col">Active</th>
+					<th colspan="2"  scope="col">Archived</th>
+					
+				  </tr>
+				</thead>
+
+				<tbody  id="table__result">
+					<!-- <tr>
+						<th colspan="2" class="text-start fs-6" scope="row">
+							<i class="fas fa-shopping-cart table__ico"></i>
+							<span>Task</span> 
+						</th>
+						<td colspan="2">count</td>
+						<td colspan="2">Task</td>
+						
+					</tr> 
+					<tr>
+						<th colspan="2" class="text-start fs-6" scope="row">
+							<i class="fas fa-brain table__ico"></i>
+							<span>Random</span> 
+						</th>
+						<td colspan="2">Date</td>
+						<td colspan="2">Task</td>
+						
+					</tr> 
+					<tr>
+						<th colspan="2" class="text-start fs-6" scope="row">
+							<i class="far fa-lightbulb table__ico"></i>
+							<span>Idea</span> 
+						</th>
+						<td colspan="2">Date</td>
+						<td colspan="2">Task</td>
+						
+					</tr> 
+					<tr>
+						<th colspan="2" class="text-start fs-6" scope="row">
+							<i class="fas fa-quote-right table__ico"></i>
+							<span>Quote</span> 
+						</th>
+						<td colspan="2">Date</td>
+						<td colspan="2">Task</td>
+						
+					</tr>  -->
+					 
+				</tbody>
+				
+				
+				
+			  </table>
 
 		</div>
 		
