@@ -36,3 +36,58 @@ ol {
 	padding: 0;
 	list-style: none;
 }
+.wrapper {
+	overflow: hidden;
+}
+.table__ico {
+	display: inline-block;
+	margin-right: 7px;
+	text-align: center;
+	width:30px;
+	height: 30px;
+	padding: 7px;
+	font-size: 15px;
+	background-color: rgb(92, 92, 92);
+	color:#fff;
+
+	border-radius: 50%;
+}
+
+.textarea {
+	resize: none;
+}
+.btn__edit,
+.btn__delete,
+.btn__archive,
+.openArchive,
+.showAll {
+	cursor: pointer;
+	transition: transform 0.1s linear;
+}
+.btn__edit:hover,
+.btn__delete:hover,
+.btn__archive:hover,
+.openArchive:hover,
+.showAll:hover {
+	transform: scale(1.1);
+}
+
+
+
+
+.showAll,
+.openArchive{
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	text-align: center;
+	line-height: 0;
+	color:#000;
+	padding: 4px;
+	background-color: #fff;
+	border-radius: 50%;
+	transition: transform 0.1s linear;
+}
+.showAll:hover, .openArchive:hover {
+	transform: scale(1.1);
+}
