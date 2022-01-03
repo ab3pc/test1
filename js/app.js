@@ -14,7 +14,9 @@ let activeTask = currentNotes.filter((item) => item.active);
 //let activeTask = notes.sort((a,b) => a.created > b.created ? 1: -1);
 render(activeTask);
 
-//RENDER//
+
+
+/* ========== Render ==============*/
 function render(list) {
   removeAll();
   let activeTask = list;
@@ -82,7 +84,9 @@ function renderResult(list) {
   }
 }
 
-//RENDER//
+
+
+/* ========== Utilites ==============*/
 
 //CLEAR TABLE//
 function removeAll() {
@@ -90,7 +94,6 @@ function removeAll() {
     table.removeChild(table.firstChild);
   }
 }
-//CLEAR TABLE//
 
 //CLEAR RES__TABLE//
 function removeAllRes() {
@@ -98,8 +101,9 @@ function removeAllRes() {
     tableResult.removeChild(tableResult.firstChild);
   }
 }
-//CLEAR RES__TABLE//
 
+
+/* ========== addEventListener for buttons ==============*/
 container.addEventListener("click", (e) => {
   switch (e.target.id) {
     case "btn__edit": {
@@ -142,7 +146,7 @@ function editMode(id) {
 
   // form.reset();
 }
-/*================= Edit Notes ======================== */
+
 
 /*================= FORM Add NOTES ======================== */
 form.addEventListener("submit", addNotes);
@@ -219,7 +223,7 @@ function addNotes(e) {
   modal.querySelector(".modal-title").textContent = "Create note";
   form.reset();
 }
-/*================= FORM Add NOTES ======================== */
+
 
 /*================= Delete NOTE ======================== */
 let deleteNote = (id) => {
@@ -229,7 +233,7 @@ let deleteNote = (id) => {
 
   render(currentNotes.filter((item) => item.active));
 };
-/*================= Delete NOTE ======================== */
+
 
 /*================= Archive NOTE ======================== */
 let archiveNote = (id) => {
@@ -251,7 +255,7 @@ let archiveNote = (id) => {
     render(activeTask);
   }
 };
-/*================= Archive NOTE ======================== */
+
 
 /*================= Open Archive NOTE ======================== */
 let openArchive = () => {
