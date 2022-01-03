@@ -1,6 +1,7 @@
 /* ==============DATA================== */
 import {notes, category} from "./variables.js";
 
+let currentNotes = notes;
 
 let container = document.querySelector("#container");
 let table = document.querySelector("#table__body");
@@ -9,7 +10,7 @@ let form = document.querySelector("#noteForm");
 let modal = document.querySelector("#modal");
 
 
-let activeTask = notes.filter((item) => item.active);
+let activeTask = currentNotes.filter((item) => item.active);
 //let activeTask = notes.sort((a,b) => a.created > b.created ? 1: -1);
 render(activeTask);
 
@@ -49,19 +50,19 @@ function renderResult(list) {
   let notesCountArc = [];
 
   /* Variables for table__result*/
-  let catTask = notes.filter((item) => item.category[0] === "Task");
+  let catTask = currentNotes.filter((item) => item.category[0] === "Task");
   notesCountActive[0] = catTask.filter((item) => item.active).length;
   notesCountArc[0] = catTask.filter((item) => !item.active).length;
 
-  let catRandom = notes.filter((item) => item.category[0] === "Random");
+  let catRandom = currentNotes.filter((item) => item.category[0] === "Random");
   notesCountActive[1] = catRandom.filter((item) => item.active).length;
   notesCountArc[1] = catRandom.filter((item) => !item.active).length;
 
-  let catQuote = notes.filter((item) => item.category[0] === "Quote");
+  let catQuote = currentNotes.filter((item) => item.category[0] === "Quote");
   notesCountActive[2] = catQuote.filter((item) => item.active).length;
   notesCountArc[2] = catQuote.filter((item) => !item.active).length;
 
-  let catIdea = notes.filter((item) => item.category[0] === "Idea");
+  let catIdea = currentNotes.filter((item) => item.category[0] === "Idea");
   notesCountActive[3] = catIdea.filter((item) => item.active).length;
   notesCountArc[3] = catIdea.filter((item) => !item.active).length;
 
@@ -129,7 +130,7 @@ container.addEventListener("click", (e) => {
 
 /*================= Edit Notes ======================== */
 function editMode(id) {
-  let elem = notes.find((item) => item.id == id);
+  let elem = currentNotes.find((item) => item.id == id);
   let modalInstance = bootstrap.Modal.getOrCreateInstance(modal);
   modalInstance.show();
   modal.querySelector(".modal-title").textContent = "Edit note";
@@ -177,7 +178,7 @@ function addNotes(e) {
 
   /*==========if edit mode=================== */
   if (id) {
-    let editedNotes = notes.map((item) => {
+    let editedNotes = currentNotes.map((item) => {
       if (item.id == id) {
         item.name = name;
         item.category = [
@@ -207,8 +208,8 @@ function addNotes(e) {
       active: true,
     };
 
-    notes.push(newTask);
-    activeTask = notes.filter((item) => item.active);
+    currentNotes.push(newTask);
+    activeTask = currentNotes.filter((item) => item.active);
   }
 
   render(activeTask);
@@ -222,10 +223,11 @@ function addNotes(e) {
 
 /*================= Delete NOTE ======================== */
 let deleteNote = (id) => {
-  let newSet = activeTask.filter((item) => item.id != id);
-  activeTask = newSet;
+  let newSet = currentNotes.filter((item) => item.id != id);
+  //activeTask = newSet;
+  currentNotes = newSet;
 
-  render(activeTask);
+  render(currentNotes.filter((item) => item.active));
 };
 /*================= Delete NOTE ======================== */
 
@@ -253,12 +255,12 @@ let archiveNote = (id) => {
 
 /*================= Open Archive NOTE ======================== */
 let openArchive = () => {
-  let acrhiveSet = notes.filter((item) => item.active === false);
+  let acrhiveSet = currentNotes.filter((item) => item.active === false);
   activeTask = acrhiveSet;
   render(activeTask);
 };
 let openActive = () => {
-  let acrhiveSet = notes.filter((item) => item.active);
+  let acrhiveSet = currentNotes.filter((item) => item.active);
   activeTask = acrhiveSet;
   render(activeTask);
 };
