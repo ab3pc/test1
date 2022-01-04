@@ -1,3 +1,10 @@
+let table = document.querySelector("#table__body");
+let tableResult = document.querySelector("#table__result");
+let container = document.querySelector("#container");
+let form = document.querySelector("#noteForm");
+let modal = document.querySelector("#modal");
+//let activeTask = notes.sort((a,b) => a.created > b.created ? 1: -1);
+
 let notes = [
 	{
 	  id: 1,
@@ -74,4 +81,6 @@ let category = [
 	  icon: "far fa-lightbulb",
 	},
   ];
-export {notes, category};
+
+
+export {notes, category, table, tableResult, container, form, modal};
